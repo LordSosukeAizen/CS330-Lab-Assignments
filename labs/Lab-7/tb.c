@@ -23,28 +23,19 @@ int is_valid_mem_range(struct exec_context* ctx, unsigned long buff, u32 count, 
 	for(int i=0; i<4; i++) {
 
 		if(i == MM_SEG_CODE || i == MM_SEG_RODATA && r) {
-
-
 			if(ctx->mms[i].start <= buff && buff+count < ctx->mms[i].next_free) return 1;
-
 		}
 		
 		if(i == MM_SEG_DATA) {
 			        if(ctx->mms[i].start <= buff && buff+count < ctx->mms[i].next_free) return 1;
-
 		}
 
 		if( i == MM_SEG_STACK) {
-
 			if(ctx->mms[i].start <= buff && buff+count < ctx->mms[i].end) return 1;
-
 		}
-
 	}
 
 	return 0;
-
-
 }
 
 
@@ -213,8 +204,8 @@ int sys_create_tb(struct exec_context *ctx, int mode)
 
 	}
 
+     
 
-
-     	
+	
     return ret_fd;
 }
