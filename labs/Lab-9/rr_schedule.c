@@ -122,6 +122,10 @@ int do_walk_pt(struct exec_context *ctx, unsigned long addr)
 		printk("PFN: %x, ", pud_base);
 		printk("Flags: %x\n", pud_flags);
 
+	} else {
+
+		printk("No L1 entry\n");
+
 	}
 
 
@@ -147,7 +151,7 @@ int do_walk_pt(struct exec_context *ctx, unsigned long addr)
 
 	} else {
 
-		printk("No L1 entry\n");
+		printk("No L2 entry\n");
 
 	}
 	 vir_pmd_base = (u64 *)osmap(pmd_base);
